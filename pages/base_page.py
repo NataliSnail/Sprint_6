@@ -21,6 +21,9 @@ class BasePage:
         return WebDriverWait(self.driver, time).until(EC.presence_of_element_located(locator),
                                                       message=f'Element not found in {locator}').click()
 
+    def send_keys(self, locator, value):
+        self.driver.find_element(*locator).send_keys(value)
+            
     def scroll_down_page(self, locator, time=10):
         element = self.driver.find_element(*locator)
         self.driver.execute_script("arguments[0].scrollIntoView();", element)
