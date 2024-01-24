@@ -17,20 +17,20 @@ class OrderPage(BasePage):
         assert self.find_element(OrderFormPageLocators.ORDER_HEADER)
 
     @allure.step("Заполнить форму 'Заказ'")
-    def fill_order_form(self,name,last_name,address, metro_station,tel_number):
-        self.find_element(OrderFormPageLocators.NAME_FIELD).send_keys(name)
-        self.find_element(OrderFormPageLocators.LAST_NAME_FIELD).send_keys(last_name)
-        self.find_element(OrderFormPageLocators.ADDRESS_FIELD).send_keys(address)
+    def fill_order_form(self, name, last_name, address, metro_station, tel_number):
+        self.send_keys(OrderFormPageLocators.NAME_FIELD,name)
+        self.send_keys(OrderFormPageLocators.LAST_NAME_FIELD,last_name)
+        self.send_keys(OrderFormPageLocators.ADDRESS_FIELD,address)
         self.click_on_element(OrderFormPageLocators.STATION_METRO_FIELD)
         self.click_on_element(metro_station)
-        self.find_element(OrderFormPageLocators.PHONE_NUMBER_FIELD).send_keys(tel_number)
+        self.send_keys(OrderFormPageLocators.PHONE_NUMBER_FIELD,tel_number)
         self.click_on_element(OrderFormPageLocators.NEXT_BUTTON)
         assert self.find_element(RentFormPageLocators.RENT_HEADER)
 
     @allure.step("Проверка доступности формы 'Аренда'")
     def get_rent_form(self):
         self.find_element(RentFormPageLocators.RENT_HEADER)
-        expected_url = Urls.URL_RENT_PAGE
+        expected_url = Urls.URL_ORDER_PAGE
         assert expected_url
 
     @allure.step("Клик на логотип 'Самокат'")
@@ -45,8 +45,3 @@ class OrderPage(BasePage):
         self.get_current_url()
         expected_url = Urls.URL
         assert expected_url
-
-
-
-
-
