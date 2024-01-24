@@ -1,12 +1,16 @@
+import random
+
+
 class Constants:
-   name = 'Иван'
-   last_name= 'Иванов'
-   address_field = 'Москва, ул. Филевская, д1, кв.1'
-   phone_number = '49512365478'
+
+   random_some_date = ['02.02.2024', '03.03.2024', '03.03.2024']
+   comment_info = 'Доставка вечером'
+   random_name = ['Петя', 'Вася', 'Маша']
+   random_last_name = ['Иванов', 'Петров', 'Сидоров']
+   random_address_field = ['Москва', 'Иваново', 'Киров']
+   random_phone_number = random.randint(0, 999999999999)
 
 class Urls:
     URL = 'https://qa-scooter.praktikum-services.ru/'
     URL_ORDER_PAGE = 'https://qa-scooter.praktikum-services.ru/order'
-    URL_RENT_PAGE = 'https://qa-scooter.praktikum-services.ru/order'
     URL_DZEN = 'https://dzen.ru/?yredirect=true'
-
