@@ -27,7 +27,7 @@ class RentPage(BasePage):
         self.click_on_element(OrderFormPageLocators.METRO_STATION_SOKOLNIKI)
         self.send_keys(OrderFormPageLocators.PHONE_NUMBER_FIELD, Constants.random_phone_number)
         self.click_on_element(OrderFormPageLocators.NEXT_BUTTON)
-        assert self.find_element(RentFormPageLocators.RENT_HEADER)
+        assert self.find_element(OrderFormPageLocators.NEXT_BUTTON)
 
     @allure.step("Заполнить форму 'Аренда', подтвердить переход к форме 'подтверждения'")
     def fill_rent_form(self):
