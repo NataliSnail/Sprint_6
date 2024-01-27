@@ -14,11 +14,12 @@ class TestOrderPage:
                                 ["Марфа", "Петрова", "Москва, ул. Тестовская,д15, кв.123", OrderFormPageLocators.METRO_STATION_CHERKOZOVSKAYA, "49518523695"]
                              ]
                              )
-    def test_check_order_form(self,driver,name,last_name,address, metro_station,tel_number):
+        def test_check_order_form(self,driver,name,last_name,address, metro_station,tel_number):
         order_form = OrderPage(driver,Urls.URL)
         order_form.click_button_order_up()
         order_form.fill_order_form(name,last_name,address, metro_station,tel_number)
-        order_form.get_rent_form()
+        order_form.check_rent_form()
+
 
 
     @allure.title("Проверить переход по логотипу 'Самокат' со страницы 'Оформления заказа'")
@@ -27,7 +28,7 @@ class TestOrderPage:
         logo_samokat = OrderPage(driver,Urls.URL)
         logo_samokat.click_button_order_up()
         logo_samokat.click_logo_samokat()
-        logo_samokat.get_main_pade()
+        logo_samokat.get_current_url()
 
 
 
