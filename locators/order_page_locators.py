@@ -2,7 +2,8 @@ from selenium.webdriver.common.by import By
 
 class OrderFormPageLocators:
 
-     ORDER_HEADER = (By.CLASS_NAME, 'Order_Header__BZXOb')                    #имя формы заказа "Для кого самокат"
+     ORDER_HEADER = (By.CLASS_NAME, 'Order_Header__BZXOb')   #имя формы заказа "Для кого самокат"
+     ORDER_FORM = (By.CLASS_NAME, 'Order_Form__17u6u')       #форма "сделать заказ"
      NAME_FIELD = (By.XPATH, '//input[@placeholder="* Имя"]')                 #поле Имя
      LAST_NAME_FIELD = (By.XPATH, '//input[@placeholder="* Фамилия"]')        #поле Фамилия
      ADDRESS_FIELD = (By.XPATH, '//input[@placeholder="* Адрес: куда привезти заказ"]')   #поле Адрес
