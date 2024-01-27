@@ -34,11 +34,10 @@ class MainPage(BasePage):
         self.click_button_order_on_main(MainPageLocators.BUTTON_ORDER_DOWN)
         assert self.find_element(OrderFormPageLocators.ORDER_HEADER)
 
+
     @allure.step("Проверить доступность формы заказа")
-    def check_order_form_after_click_button_order(self):
-        self.find_element(OrderFormPageLocators.ORDER_HEADER)
-        expected_url = Urls.URL_ORDER_PAGE
-        assert expected_url
+    def check_order_form(self):
+        assert self.wait_visibility_of_element_located(OrderFormPageLocators.ORDER_FORM)
 
     @allure.step("Клик на логотип Яндекса")
     def click_on_logo_yandex(self):
@@ -46,12 +45,10 @@ class MainPage(BasePage):
         assert self.find_element(MainPageLocators.LOGO_YANDEX)
 
     @allure.step("Получение страницы Дзен")
-    def get_page_dzen(self):
+    def check_page_dzen(self):
         self.get_current_url()
         expected_url = Urls.URL_DZEN
         assert expected_url
-
-
 
 
 
