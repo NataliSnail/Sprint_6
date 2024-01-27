@@ -7,7 +7,7 @@ import allure
 class TestRentFormPage:
     @allure.title("Заполнить форму Аренда")
     @allure.description('Клик на кнопку "Заказать" > Заполнить форму Сделать заказ > заполнить форму аренды ')
-    def test_check_rent_form(self,driver):
+     def test_check_rent_form(self,driver):
         rent_form = RentPage(driver,Urls.URL)
         rent_form.click_button_order_up()
         rent_form.fill_order_form()
@@ -34,6 +34,7 @@ class TestRentFormPage:
         info_confirmed.fill_rent_form()
         info_confirmed.click_yes_on_confirm_order()
         info_confirmed.click_button_order_confirmed()
+
 
 
 
