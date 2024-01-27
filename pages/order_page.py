@@ -25,23 +25,15 @@ class OrderPage(BasePage):
         self.click_on_element(metro_station)
         self.send_keys(OrderFormPageLocators.PHONE_NUMBER_FIELD,tel_number)
         self.click_on_element(OrderFormPageLocators.NEXT_BUTTON)
-        assert self.find_element(RentFormPageLocators.RENT_HEADER)
+        assert self.find_element(OrderFormPageLocators.NEXT_BUTTON)
 
-    @allure.step("Проверка доступности формы 'Аренда'")
-    def get_rent_form(self):
-        self.find_element(RentFormPageLocators.RENT_HEADER)
-        expected_url = Urls.URL_ORDER_PAGE
-        assert expected_url
+    @allure.step("Заполнить форму 'Заказ'")
+    def check_rent_form(self):
+        assert self.wait_visibility_of_element_located(RentFormPageLocators.RENT_HEADER)
+
 
     @allure.step("Клик на логотип 'Самокат'")
     def click_logo_samokat(self):
         """проверить переход по логотипу самоката"""
         self.click_on_element(OrderFormPageLocators.LOGO_SAMOKAT)
         assert self.find_element(OrderFormPageLocators.LOGO_SAMOKAT)
-
-
-    @allure.step("Получение главной страницы сайта")
-    def get_main_pade(self):
-        self.get_current_url()
-        expected_url = Urls.URL
-        assert expected_url
