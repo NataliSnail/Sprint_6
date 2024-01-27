@@ -37,6 +37,8 @@ class TestMainPage:
     def test_check_button_order_up(self, driver):
         button_order = MainPage(driver,Urls.URL)
         button_order.click_button_order_up()
+        button_order.check_order_form()
+
 
 
     @allure.title("Проверить кнопку Заказать внизу страницы")
@@ -45,6 +47,7 @@ class TestMainPage:
         button_order = MainPage(driver,Urls.URL)
         button_order.scroll_down()
         button_order.click_button_order_down()
+        button_order.check_order_form()
 
 
     @allure.title("Проверить переход на новую страницу при нажатии на логотип Яндекс")
@@ -53,7 +56,8 @@ class TestMainPage:
         logo_yandex = MainPage(driver,Urls.URL)
         logo_yandex.click_on_logo_yandex()
         logo_yandex.switch_to_window()
-        logo_yandex.get_page_dzen()
+        logo_yandex.check_page_dzen()
+
 
 
 
