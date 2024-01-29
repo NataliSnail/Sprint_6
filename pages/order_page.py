@@ -37,3 +37,8 @@ class OrderPage(BasePage):
         """проверить переход по логотипу самоката"""
         self.click_on_element(OrderFormPageLocators.LOGO_SAMOKAT)
         assert self.find_element(OrderFormPageLocators.LOGO_SAMOKAT)
+
+    @allure.step("Получение главной страницы Самокат")
+    def check_main_page(self):
+        assert self.find_element(MainPageLocators.MODEL_TOXIC_PRO)
+
