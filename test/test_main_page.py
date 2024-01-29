@@ -56,10 +56,9 @@ class TestMainPage:
         logo_yandex = MainPage(driver,Urls.URL)
         logo_yandex.click_on_logo_yandex()
         logo_yandex.switch_to_window()
-        logo_yandex.check_page_dzen()
-
-
-
+        dzen_page = MainPage(driver,Urls.URL_DZEN)
+        elements = dzen_page.check_dzen_page()
+        assert 'Главное' and 'Москва и область' in elements
 
 
 
