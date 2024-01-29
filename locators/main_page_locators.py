@@ -5,7 +5,9 @@ class MainPageLocators:
     IMPORTANT_QUESTIONS = (By.CLASS_NAME, "Home_FourPart__1uthg")                               #элемент "Важные вопросы"
     BUTTON_ORDER_UP = (By.CSS_SELECTOR, '[class*="Header_Nav"] [class="Button_Button__ra12g"]') #кнопка Заказать вверху страницы
     BUTTON_ORDER_DOWN = (By.CLASS_NAME, 'Button_Button__ra12g.Button_Middle__1CSJM')           #кнопка Заказать внизу страницы
-    LOGO_YANDEX = (By.XPATH, '//a[contains(@href, "//yandex.ru")]')                            #логотип яндекса
+    LOGO_YANDEX = (By.XPATH, '//a[contains(@href, "//yandex.ru")]')                             #логотип яндекса
+    DZEN_MENU_ELEMENTS = (By.XPATH, '//a[@class="tabs-menu__link-2b"]')                         #таб меню на странице Дзен Новости разделов
+    MODEL_TOXIC_PRO = (By.XPATH, '//div[@class ="Home_Row__jdQW2"]')                           # элемент "Модель Toxic PRO" на главной странице
 
     QUESTION_0 = (By.XPATH, '//div[@id= "accordion__heading-0"]')  # элемент вопрос  №1
     QUESTION_1 = (By.XPATH, '//div[@id= "accordion__heading-1"]')  # элемент вопрос  №2
