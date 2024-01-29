@@ -30,7 +30,7 @@ class RentPage(BasePage):
         assert self.find_element(OrderFormPageLocators.NEXT_BUTTON)
 
     @allure.step("Заполнить форму 'Аренда', подтвердить переход к форме 'подтверждения'")
-    def fill_rent_form(self):
+    def check_fill_rent_form(self):
         self.send_keys(RentFormPageLocators.DATA_FIELD,random.choice(Constants.random_some_date))
         self.send_keys(RentFormPageLocators.DATA_FIELD,Keys.ENTER)
         self.click_on_element(RentFormPageLocators.RENTAL_PERIOD_FIELD)
@@ -41,14 +41,13 @@ class RentPage(BasePage):
         assert self.find_element(RentFormPageLocators.CONFIRM_ORDER_BUTTON_YES)
 
     @allure.step("Клик 'Да' на форме 'Хотите оформить заказ?")
-    def click_yes_on_confirm_order(self):
+    def check_click_yes_on_confirm_order(self):
         self.find_element(RentFormPageLocators.CONFIRM_WINDOW)
         self.click_on_element(RentFormPageLocators.CONFIRM_ORDER_BUTTON_YES)
         assert self.find_element(RentFormPageLocators.ORDER_CONFIRMED)
 
     @allure.step("Клик 'Посмотреть статус' о заказе")
-    def click_button_order_confirmed(self):
+    def check_click_button_order_confirmed(self):
         self.find_element(RentFormPageLocators.NUMBER_ORDER)
         self.click_on_element(RentFormPageLocators.BUTTON_CHECK_STATUS)
         assert self.find_element(RentFormPageLocators.TRACK_INFO)
-
