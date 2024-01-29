@@ -45,11 +45,10 @@ class MainPage(BasePage):
         assert self.find_element(MainPageLocators.LOGO_YANDEX)
 
     @allure.step("Получение страницы Дзен")
-    def check_page_dzen(self):
-        self.get_current_url()
-        expected_url = Urls.URL_DZEN
-        assert expected_url
-
+    def check_dzen_page(self):
+        all_elements = self.find_elements(MainPageLocators.DZEN_MENU_ELEMENTS)
+        elements_text = [element.text for element in all_elements]
+        return elements_text
 
 
 
